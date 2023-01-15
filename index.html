@@ -11,7 +11,7 @@
 			href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined"
 		/>
 	</head>
-	<body>
+	<body onload="genarateCaptcha()">
 		<form class="form">
 			<div class="title">Sample Captcha Form validation</div>
 			<div class="form-group">
@@ -31,20 +31,19 @@
 
 			<div class="captcha-code">
 				<div class="captcha-bg">
-					<img
-						className="captcha-image"
-						src="./captcha-bg1.jpg"
-						alt="captcha"
-					/>
+					<span class="captcha"></span>
 				</div>
 
 				<span class="material-icons-outlined btn btn-refresh"> refresh </span>
 			</div>
 
 			<div class="captcha-group">
-				<input class="captcha-input" type="text" name="captcha-value" />
+				<input class="captcha-input" type="text" name="captcha-value" required/>
 				<button class="btn btn-check">check</button>
 			</div>
+
+			<div class="msg error"></div>
+			<div class="success msg"></div>
 
 			<button type="submit" class="btn-submit">Submit</button>
 		</form>
